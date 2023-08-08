@@ -5,24 +5,34 @@ import { useRouter } from "next/navigation"
 import { axios } from "axios"
 
 
-export default function LoginPage() {
+export default function SignupPage() {
 
     const [user, setUser] = useState({
         email: "",
         password: "",
+        username: ""
     })
 
-    const onLogin = async () => {
+    const onSignup = async () => {
 
     }
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen py-2 ">
-            <h1>Login</h1>
+            <h1>Sign up</h1>
 
             <hr />
-            <form className="flex flex-col items-center justify-center py-2">
-
+            <form className="flex flex-col ">
+                <div>
+                    <label htmlFor="username">Username: </label>
+                    <input
+                        id='username'
+                        type='text'
+                        value={user.username}
+                        onChange={(e) =>
+                            setUser({ ...user, username: e.target.value })}
+                        placeholder="Username" />
+                </div>
                 <div>
                     <label htmlFor="password">Password: </label>
                     <input
@@ -44,9 +54,9 @@ export default function LoginPage() {
                         placeholder="Email" />
                 </div>
                 <button
-                    onClick={onLogin}
-                    className="border-gray-400 rounded-lg hover:bg-gray-600 focus:outline-none focus:border-gray-600">Login here</button>
-                <Link href='/signup' className="hover:bg-blue-500">Go to Signup</Link>
+                    onClick={onSignup}
+                    className="border-gray-400 rounded-lg hover:bg-gray-600 focus:outline-none focus:border-gray-600">Sign up here</button>
+                <Link href='/login' className="hover:bg-blue-500">Go to login</Link>
             </form>
         </div>
     )
