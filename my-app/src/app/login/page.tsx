@@ -68,6 +68,7 @@ export default function LoginPage() {
             </div>
 
             <button
+                type='submit'
                 onClick={onLogin}
                 className="border-gray-400 rounded-lg hover:bg-gray-600 focus:outline-none focus:border-gray-600">Login here</button>
             <Link href='/signup' className="hover:bg-blue-500">Go to Signup</Link>
