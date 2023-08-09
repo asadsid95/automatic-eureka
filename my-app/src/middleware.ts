@@ -5,7 +5,7 @@ export function middleware(request: NextRequest) {
     // return NextResponse.redirect(new URL('/home', request.url))
     const path = request.nextUrl.pathname
 
-    const isPublicPath = path === '/login' || path === '/signup'
+    const isPublicPath = path === '/login' || path === '/signup' || path === '/verifyemail'
 
     const token = request.cookies.get('token')?.value || ''
 
