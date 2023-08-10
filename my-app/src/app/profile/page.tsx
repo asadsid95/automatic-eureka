@@ -30,7 +30,7 @@ export default function ProfilePage() {
     const getUserDetails = async () => {
         const res = await axios.get('/api/users/me')
         console.log(res.data)
-        setData(res.data.data._id)
+        setData(res.data.data.username) // CHECK AGAIN
 
     }
 
@@ -44,7 +44,7 @@ export default function ProfilePage() {
                 className='p-3'> {data === 'nothing' ? "No user" : <Link href={`/profile/${data}`}
                     className='bg-gray-600 rounded-md hover:bg-gray-400 p-4'>{data}</Link>}</h2>
             <hr />
-            <button
+            <button className='bg-blue-400 hover:bg-blue-600'
                 onClick={logout}
             >Logout</button>
             <button

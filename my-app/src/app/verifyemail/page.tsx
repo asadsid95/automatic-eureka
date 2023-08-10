@@ -13,7 +13,7 @@ export default function VerifyEmailPage() {
     const verifyUserEmail = async () => {
         try {
 
-            await axios.post('/api/users/verifyemail', { token })
+            await axios.post('/api/users/verifyemail', { token }) // if this gives error, will setVerified get executed? or will catch{} be used?
             setVerified(true)
 
         } catch (err: any) {
@@ -25,7 +25,7 @@ export default function VerifyEmailPage() {
     useEffect(() => {
         const urlToken = window.location.search.split('=')[1]
         setToken(urlToken || '')
-    })
+    },)
 
     useEffect(() => {
         if (token.length > 0) {
@@ -37,7 +37,7 @@ export default function VerifyEmailPage() {
     return (
         <div>
             <h1 >Verify your Email</h1>
-            <h2> {token ? `${token}` : 'no token'}</h2>
+            <h2> {token ? `${token}` : '- no token'}</h2>
 
             {verified && (
                 <div>
@@ -47,7 +47,7 @@ export default function VerifyEmailPage() {
             )}
 
             {error && (
-                <div>
+                <div className="bg-gray-400">
                     <h2>Error</h2>
                     <Link href='/login'>Login</Link>
                 </div>

@@ -82,7 +82,7 @@ export default function SignupPage() {
                 id='signup'
                 type='submit'
                 onClick={onSignup}
-                className="bg-gray-700 rounded-lg hover:bg-gray-600 focus:outline-none focus:border-gray-600">{buttonDisabled ? "awaiting" : "Signup"}</button>
+                className="bg-gray-500 rounded-lg hover:bg-gray-600 focus:outline-none focus:border-gray-600">{buttonDisabled ? "awaiting" : "Signup"}</button>
             <Link href='/login' className="hover:bg-blue-500">Go to login</Link>
             {/* </form> */}
         </div>
